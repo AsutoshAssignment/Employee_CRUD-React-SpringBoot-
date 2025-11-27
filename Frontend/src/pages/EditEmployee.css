@@ -1,0 +1,196 @@
+.edit-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #ece4ff, #dcd7ff, #c9e6ff);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bg-blob-left,
+.bg-blob-right {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.bg-blob-left {
+  left: -90px;
+  top: 18%;
+  background: radial-gradient(circle, rgba(220, 215, 255, 1), rgba(220, 215, 255, 0));
+}
+
+.bg-blob-right {
+  right: -100px;
+  bottom: 5%;
+  background: radial-gradient(circle, rgba(201, 230, 255, 1), rgba(201, 230, 255, 0));
+}
+
+.bg-halo {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent);
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.edit-card {
+  position: relative;
+  z-index: 1;
+  width: 480px;
+  padding: 35px 28px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(120, 120, 190, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.edit-title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #2b2b2b;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lbl {
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lbl-icon {
+  font-size: 18px;
+}
+
+input,
+select {
+  padding: 11px;
+  border-radius: 12px;
+  border: 1px solid rgba(150, 150, 180, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #8b82ff;
+  box-shadow: 0 0 6px rgba(139, 130, 255, 0.4);
+}
+
+.current-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: 6px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.update-btn {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #4d79ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 4px 12px rgba(77, 121, 255, 0.35);
+}
+
+.update-btn:hover {
+  background: #3b63e0;
+  transform: translateY(-2px);
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.local-toast {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 26px;
+  background: #33cc66;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+
+  /* No blur */
+  backdrop-filter: none;
+
+  /* Glow effect */
+  box-shadow:
+    0 0 12px rgba(51, 204, 102, 0.7),
+    0 0 24px rgba(51, 204, 102, 0.5),
+    0 0 36px rgba(51, 204, 102, 0.35);
+
+  animation: toastSlideFadeGreen 1.8s ease forwards;
+}
+
+.toast-icon {
+  font-size: 18px;
+  color: white;
+  animation: checkPopGreen 0.4s ease;
+}
+
+/* POP animation */
+@keyframes checkPopGreen {
+  0% { transform: scale(0.3); opacity: 0; }
+  60% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* SLIDE + FADE animation */
+@keyframes toastSlideFadeGreen {
+  0% { opacity: 0; transform: translate(-50%, -20px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
+}

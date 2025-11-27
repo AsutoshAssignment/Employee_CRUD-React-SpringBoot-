@@ -1,0 +1,49 @@
+.trespasser-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe0e0, #ffd6d6, #ffcccc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.warning-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  width: 420px;
+  box-shadow: 0px 10px 30px rgba(255, 80, 80, 0.25);
+  border: 1px solid rgba(255, 200, 200, 0.8);
+}
+
+.warning-card h1 {
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+  color: #c62828;
+}
+
+.warning-card p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.go-back-btn {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 5px 15px rgba(255, 76, 76, 0.35);
+}
+
+.go-back-btn:hover {
+  background: #e63a3a;
+  transform: translateY(-2px);
+}

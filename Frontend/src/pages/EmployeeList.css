@@ -1,0 +1,164 @@
+/* KEEPING YOUR ORIGINAL PAGE BACKGROUND */
+.employee-list-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #ece4ff, #dcd7ff, #c9e6ff);
+  overflow: hidden;
+}
+
+/* Background decorative blobs */
+.bg-blob {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  filter: blur(120px);
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.bg-blob-left {
+  background: #b7c8ff;
+  top: -100px;
+  left: -120px;
+}
+
+.bg-blob-right {
+  background: #d1b8ff;
+  bottom: -100px;
+  right: -120px;
+}
+
+.bg-halo {
+  position: absolute;
+  width: 70%;
+  height: 200px;
+  background: radial-gradient(circle, #ffffff88, transparent 70%);
+  top: 100px;
+  z-index: 0;
+}
+
+.employee-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+  text-align: center;
+  z-index: 2;
+}
+
+/* GRID LAYOUT — RESPONSIVE */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+/* CARD STYLING — SAME LOOK AS DETAIL CARD */
+.emp-card {
+  background: #ffffffdd;
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 45px rgba(92, 70, 146, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.emp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 55px rgba(80, 60, 140, 0.35);
+}
+
+/* EMPLOYEE PHOTO */
+.emp-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #ece4ff;
+}
+
+/* TEXT */
+.emp-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.emp-title {
+  color: #655caa;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* INFO ROWS */
+.emp-info {
+  margin: 8px 0 14px;
+}
+
+.emp-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #e6e0ff;
+}
+
+.emp-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.emp-value {
+  font-size: 14px;
+  color: #333;
+}
+
+/* BUTTONS */
+.emp-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, transform 0.1s ease;
+}
+
+.btn.edit {
+  background: #4c7bff;
+  color: white;
+}
+
+.btn.edit:hover {
+  background: #3a68ea;
+  transform: scale(1.05);
+}
+
+.btn.delete {
+  background: #ff4d5c;
+  color: white;
+}
+
+.btn.delete:hover {
+  background: #e43d4a;
+  transform: scale(1.05);
+}
